@@ -11,13 +11,13 @@
   <url>http://www.liferay.com</url>
 
   <properties>
-    <liferay.auto.deploy.dir>/opt/deploy</liferay.auto.deploy.dir>
+    <liferay.auto.deploy.dir>/opt/wgen/deploy</liferay.auto.deploy.dir>
     <liferay.version>6.1.0</liferay.version>
   </properties>
   <distributionManagement>
     <repository>
       <id>ssh-repository</id>
-      <url>scpexe://23.21.195.190/opt/deploy</url>
+      <url>scpexe://23.21.195.190/opt/wgen/deploy</url>
     </repository>
   </distributionManagement>
   <modules>
