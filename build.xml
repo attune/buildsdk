@@ -6,11 +6,20 @@
 
 	<import file="build-common.xml" />
 
+	<target name="create-known-hosts">
+			 <property environment="env"/>
+			 <mkdir dir="${env.HOME}/.ssh"/>
+			 <chmod dir="${env.HOME}/.ssh" perm="0700"/>
+			 <copy file="./known_hosts" tofile="${env.HOME}/.ssh/known_hosts"/>
+			 <chmod file="${env.HOME}/.ssh/known_hosts" perm="0600"/>
+	</target>
 	<target name="all">
 		<antcall target="clean" />
 		<antcall target="deploy" />
+		
 	 
 	</target>
+	
 
 	<target name="build-service">
 		<ant dir="portlets" target="build-service" inheritAll="false" />
@@ -65,7 +74,7 @@
 		<ant dir="webs" target="deploy" inheritAll="false" />
 	</target>
 	 
-
+	 
 	<target name="direct-deploy">
 		<ant dir="hooks" target="direct-deploy" inheritAll="false" />
 		<ant dir="layouttpl" target="direct-deploy" inheritAll="false" />
